@@ -1,25 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function AnswerOption(props) {
+function AnswerCheckbox(props) {
+
 
   return (
     <li className="answerOption">
       <input
-        type="radio"
+        type="checkbox"
         className="radioCustomButton"
         name="radioGroup"
-        checked={props.answerType === props.answer}
-
-
-        //checked="1"
-
-       // checked={props.answerType === '1'}
+      //  checked={props.answerType === props.answer}
 
         id={props.answerType}
         value={props.answerType}
         //disabled={props.answer}
-        onChange={props.onAnswerSelected}
+        onChange={props.toggleCheckboxChange}
       />
       <label className="radioCustomLabel" htmlFor={props.answerType}>
         {props.answerContent}
@@ -28,11 +24,15 @@ function AnswerOption(props) {
   );
 }
 
-AnswerOption.propTypes = {
+
+
+
+AnswerCheckbox.propTypes = {
   answerType: PropTypes.string.isRequired,
   answerContent: PropTypes.string.isRequired,
   answer: PropTypes.string.isRequired,
-  onAnswerSelected: PropTypes.func.isRequired
+  onAnswerSelected: PropTypes.func.isRequired,
+  toggleCheckboxChange: PropTypes.func.isRequired
 };
 
-export default AnswerOption;
+export default AnswerCheckbox;

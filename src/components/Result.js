@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
+import logo from "../svg/logo.svg";
 
 function Result(props) {
   return (
-    <CSSTransitionGroup
+
+
+      <CSSTransitionGroup
       className="container result"
       component="div"
       transitionName="fade"
@@ -13,10 +16,21 @@ function Result(props) {
       transitionAppear
       transitionAppearTimeout={500}
     >
-      <div>
+
+        <div className="App-header">
+          <a href="/"><img src={logo} className="App-logo" alt="logo" /></a>
+          <h2>Опросник!</h2>
+        </div>
+
+
+        <div>
         You prefer <strong>{props.quizResult}</strong>!
-      </div>
+        </div>
+
+
+
     </CSSTransitionGroup>
+
   );
 }
 

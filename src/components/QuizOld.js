@@ -6,7 +6,6 @@ import QuestionCount from '../components/QuestionCount';
 import AnswerOption from '../components/AnswerOption';
 import Button from '../components/Button';
 import Head from '../components/Head';
-import logo from "../svg/logo.svg";
 
 
 const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
@@ -29,7 +28,9 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
     }
 
 
+
     return (
+
 
         <CSSTransitionGroup
             className="container"
@@ -40,13 +41,6 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
             transitionAppear
             transitionAppearTimeout={500}
         >
-
-            <div className="App-header">
-                <a href="/"><img src={logo} className="App-logo" alt="logo" /></a>
-                <h2>Опросник!</h2>
-            </div>
-
-
             <div key={props.questionId}>
                 <Head>
                     <QuestionCount counter={props.questionId} total={props.questionTotal}/>
@@ -58,7 +52,7 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
                             <li className={i+1 === props.questionId ? 'active' : ''} onClick={() => setQuestion(i+1)}>{i+1}</li>
 
 
-                        ))}
+                            ))}
                     </ul>
                     <Question content={props.question}/>
                 </Head>
@@ -68,8 +62,8 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
 
 
                 <div class="nav-buttons">
-                    <Button text="Back" dataType="Back" questId={props.questionId} className="button_back" onClick={goBack}/>
-                    <Button text="Next" dataType="Next" questId={props.questionId} className="button_next" onClick={goNext}/>
+                <Button text="Back" dataType="Back" questId={props.questionId} className="button_back" onClick={goBack}/>
+                <Button text="Next" dataType="Next" questId={props.questionId} className="button_next" onClick={goNext}/>
                 </div>
             </div>
         </CSSTransitionGroup>

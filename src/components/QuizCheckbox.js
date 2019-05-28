@@ -3,19 +3,20 @@ import PropTypes from 'prop-types';
 import {CSSTransitionGroup} from 'react-transition-group';
 import Question from '../components/Question';
 import QuestionCount from '../components/QuestionCount';
-import AnswerOption from '../components/AnswerOption';
+import AnswerCheckbox from '../components/AnswerCheckbox';
 import Button from '../components/Button';
 import Head from '../components/Head';
 import logo from "../svg/logo.svg";
 
 
-const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
+const QuizCheckbox = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
 
 
     function renderAnswerOptions(key) {
 
         return (
-            <AnswerOption
+
+            <AnswerCheckbox
                 key={key.content}
                 answerContent={key.content}
                 answerType={key.type}
@@ -23,6 +24,7 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
                 questionId={props.questionId}
                 onAnswerSelected={props.onAnswerSelected}
             />
+
         );
 
 
@@ -45,6 +47,7 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
                 <a href="/"><img src={logo} className="App-logo" alt="logo" /></a>
                 <h2>Опросник!</h2>
             </div>
+
 
 
             <div key={props.questionId}>
@@ -76,11 +79,9 @@ const Quiz = ({ goBack, goNext, setQuestionId, setQuestion, ...props }) => {
     );
 }
 
-Quiz.propTypes = {
+QuizCheckbox.propTypes = {
     answer: PropTypes.string.isRequired,
     answerOptions: PropTypes.array.isRequired,
-
-
 
     question: PropTypes.string.isRequired,
     questionId: PropTypes.number.isRequired,
@@ -90,7 +91,8 @@ Quiz.propTypes = {
     goNext: PropTypes.func.isRequired,
     setQuestionId: PropTypes.func.isRequired,
     quizQuestions: PropTypes.array,
-    setQuestion: PropTypes.func.isRequired
+    setQuestion: PropTypes.func.isRequired,
+    handleCheckboxChange: PropTypes.func.isRequired
 };
 
-export default Quiz;
+export default QuizCheckbox;

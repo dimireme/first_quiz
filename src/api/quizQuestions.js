@@ -1,90 +1,136 @@
 const quizQuestions = [
-  {
-      question: "What franchise would you rather play a game from?",
-      answers: [
-          {
-              type: "Microsoft",
-              content: "Halo"
-          },
-          {
-              type: "Nintendo",
-              content: "Pokemon"
-          },
-          {
-              type: "Sony",
-              content: "Uncharted"
-          }
-      ]
-  },
-  {
-      question: "Which console would you prefer to play with friends?",
-      answers: [
-          {
-              type: "Microsoft",
-              content: "X-Box"
-          },
-          {
-              type: "Nintendo",
-              content: "Nintendo 64"
-          },
-          {
-              type: "Sony",
-              content: "Playstation 1"
-          }
-      ]
-  },
-  {
-      question: "Which of these racing franchises would you prefer to play a game from?",
 
+
+   {
+        question: "Вы уже наш клиент?",
+        type: "RadioAuth",
+        answers: [
+            {
+                type: "Microsoft",
+                content: "Да, у меня есть аккаунт"
+            },
+            {
+                type: "Nintendo",
+                content: "Нет, я еще не являюсь вашим клиентом"
+            },
+
+        ]
+    },
+
+
+  {
+      question: "В какой стране вы продаете обувь",
+      type: "Checkbox",
       answers: [
           {
               type: "Microsoft",
-              content: "Forza"
+              content: "Россия"
           },
           {
               type: "Nintendo",
-              content: "Mario Kart"
+              content: "Беларусь"
           },
           {
               type: "Sony",
-              content: "Gran Turismo"
+              content: "Казахстан"
+          },
+          {
+              type: "TestSony",
+              content: "Другая страна СНГ"
           }
       ]
   },
   {
-      question: "Which of these games do you think is best?",
+      type: "Radio",
+      question: "Укажите ваш город?",
       answers: [
           {
               type: "Microsoft",
-              content: "BioShock"
+              content: "Москва"
           },
           {
               type: "Nintendo",
-              content: "The Legend of Zelda: Ocarina of Time"
+              content: "Санкт-Петербург"
           },
           {
               type: "Sony",
-              content: "Final Fantasy VII"
+              content: "Новосибирск"
           }
       ]
   },
   {
-      question: "What console would you prefer to own?",
+      question: "Кого вы представляете?",
+      type: "Radio",
       answers: [
           {
               type: "Microsoft",
-              content: "X-Box One"
+              content: "Совместная покупка"
+          },
+          {
+              type: "Microsoft111",
+              content: "Розничная покупка"
           },
           {
               type: "Nintendo",
-              content: "Wii U"
+              content: "Сеть магазинов"
+          },
+
+          {
+              type: "Nintendo22",
+              content: "Оптовый склад"
+          },
+
+      ]
+  },
+  {
+      question: "Какие у вас объемы?",
+      type: "Radio",
+      answers: [
+          {
+              type: "Microsoft",
+              content: "до 100 000 руб."
+          },
+          {
+              type: "Nintendo",
+              content: "100 000 - 200 000 руб."
           },
           {
               type: "Sony",
-              content: "Playstation 4"
+              content: "Свыше 200 000 руб."
           }
       ]
-  }
+  },
+  {
+      question: "Вам нужно брендирование?",
+      type: "Radio",
+      answers: [
+          {
+              type: "Microsoft",
+              content: "Да, обязательно"
+          },
+          {
+              type: "Nintendo",
+              content: "Нет, не принципиально"
+          },
+
+      ]
+  },
+    {
+        question: "Какой товар вы закупаете?",
+        type: "Radio",
+        answers: [
+            {
+                type: "Microsoft",
+                content: "Импортный"
+            },
+            {
+                type: "Nintendo",
+                content: "Отечественный"
+            },
+
+        ]
+    }
+
 ];
 
 export default quizQuestions;
